@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffffff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.root {
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.btn {
+  font-family: "Open Sans";
+  font-weight: 500;
+  font-size: large;
+  background-color: #1a73e8;
+  border-radius: 6px;
+  border: none;
+  padding: 10px 60px;
+  color: #ffffff;
+}
+
+.title {
+  text-align: center;
+  font-family: "Open Sans";
+  font-weight: 700;
+  font-size: xx-large;
+}
+
+.grid {
+  display: grid;
+  align-self: center;
+}
+
+.add-account {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.generate-mnemonic--btn {
+  margin-bottom: 30px;
+  justify-self: center;
+}
+
+.add-account--btn {
+  align-self: center;
+}
+
+.key-pair,
+.mnemonic {
+  text-align: center;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: large;
+}
+
+.key-pair {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: start;
+}
+
+.hidden {
+  display: none;
+}

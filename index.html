@@ -4,8 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BIP39 Mnemonic Generator</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Development (un-minified) -->
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
+
+    <!-- Production (minified) -->
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
   </head>
   <body>
-    <script type="module" src="script.js"></script>
+    <div class="root">
+      <div class="title">Create Your Crypto Wallet</div>
+      <div class="generate-mnemonic grid">
+        <button class="generate-mnemonic--btn btn">Generate Mnemonic</button>
+        <div class="mnemonic"></div>
+      </div>
+      <div class="add-account hidden">
+        <button class="add-account--btn btn">Add Account</button>
+        <div class="key-pair"></div>
+      </div>
+    </div>
   </body>
+  <script src="index.js"></script>
 </html>
