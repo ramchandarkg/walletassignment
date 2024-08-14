@@ -14,8 +14,6 @@ let keyPair = [];
 let generateMnemonicBtn = document.querySelector(".generate-mnemonic--btn");
 let generatedMnemonic = document.querySelector(".mnemonic");
 let addAccount = document.querySelector(".add-account--btn");
-let privateKeyDiv = document.querySelector(".private-key");
-let publicKeyDiv = document.querySelector(".pulic-key");
 generateMnemonicBtn.addEventListener("click", () => {
   generatedMnemonic.textContent = mnemonic;
   document.querySelector(".add-account").classList.toggle("hidden");
@@ -28,7 +26,7 @@ addAccount.addEventListener("click", () => {
   console.log(secret);
   const keypair = solanaWeb3.Keypair.fromSecretKey(secret); // Use Keypair from solanaWeb3
   const publicKey = keypair.publicKey.toBase58();
-  console.log(publicKey);
+  console.log("pbhbjbjbjbj    " + publicKey);
   accountCount++;
   keyPair.push({
     privateKey: bs58.default.encode(secret),
@@ -38,7 +36,7 @@ addAccount.addEventListener("click", () => {
   // privateKeyDiv.textContent = publicKey;
   const arr1 = keyPair
     .map((item) => {
-      return `<div class="pulic-key">${item.publicKey}</div><div class="private-key">${item.privateKey}</div>`;
+      return `<div class="label">Public Key</div><div class="pulic-key">${item.publicKey}</div><div class="label">Private Key</div><div class="private-key">${item.privateKey}</div>`;
     })
     .join("");
   document.querySelector(".key-pair").innerHTML = arr1;
