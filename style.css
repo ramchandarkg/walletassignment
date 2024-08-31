@@ -1,88 +1,316 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Jersey+10&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wdth,wght,YTLC@0,6..12,75..125,200..1000,440..540;1,6..12,75..125,200..1000,440..540&display=swap");
 * {
   margin: 0;
   box-sizing: border-box;
 }
 
 body {
-  background-color: #ffffff;
+  background-color: rgb(23, 23, 29);
   height: 100vh;
+}
+
+.navbar {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  margin: auto;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+#title {
+  color: #ff842d;
+  font-weight: 800;
+  font-size: 80px;
+  font-family: "Jersey 10", sans-serif;
+}
+
+.settings,
+.account {
+  width: 30px;
+  height: auto;
+}
+
+.send,
+.receive {
+  width: 40px;
+  height: auto;
+}
+
+.copy {
+  width: 15px;
+  height: auto;
+  object-fit: contain;
+}
+
+.view {
+  width: 20px;
+  height: auto;
+}
+
+.title-anchor {
+  text-decoration: none;
+}
+
+.navbar--parent {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.text--color {
+  color: rgb(255, 255, 255);
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.account-settings {
+  display: flex;
+  justify-content: flex-start;
+  align-items: start;
+  gap: 50px;
+}
+
+.settings-left {
+  width: 40%;
+}
+
+.settings-right {
+  width: 100%;
+  background-color: rgb(35, 35, 40);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: -22px;
+}
+
+.settings--option {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
   align-items: center;
 }
 
-.root {
-  max-width: 1100px;
-  margin: auto;
+.settingspace {
+  margin-bottom: 10px;
+}
+
+.wallet {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   gap: 30px;
-  box-shadow: 5px 5px 50px #1a73e8;
-  border-radius: 6px;
-  padding: 50px;
+  margin-top: 10px;
 }
 
-.btn {
-  font-family: "Open Sans";
-  font-weight: 500;
-  font-size: large;
-  background-color: #1a73e8;
-  border-radius: 6px;
-  border: none;
-  padding: 10px 60px;
-  color: #ffffff;
-}
-
-.title {
-  text-align: center;
-  font-family: "Open Sans";
-  font-weight: 700;
-  font-size: 60px;
-  color: #1a73e8;
-}
-
-.grid {
-  display: grid;
-  align-self: center;
-}
-
-.add-account {
+.keys {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
 
-.generate-mnemonic--btn {
+.settingswrapper {
+  padding-top: 80px;
+}
+
+.settingstitle {
+  font-size: 25px;
+}
+
+.titlespace {
   margin-bottom: 30px;
-  justify-self: center;
 }
 
-.add-account--btn {
-  align-self: center;
-}
-
-.key-pair,
-.mnemonic {
-  text-align: center;
-  font-family: "Open Sans";
-  font-weight: 600;
-  font-size: large;
-}
-
-.key-pair {
+.publickey,
+.privatekey {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: start;
+  align-items: center;
+  gap: 10px;
 }
 
-.hidden {
+.cryptologo {
+  border-radius: 50px;
+  width: 60px;
+  height: auto;
+}
+
+.accountdetails {
+  margin-bottom: 20px;
+}
+
+.rootwrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.root--title {
+  color: rgb(255, 255, 255);
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 50px;
+  word-spacing: 10px;
+}
+
+.your-secret-phrase {
+  color: rgb(255, 255, 255);
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 50px;
+  word-spacing: 10px;
+  text-align: center;
+}
+
+.root {
+  display: grid;
+  gap: 30px;
+  margin-top: -50px;
+}
+
+.passphrasebtn,
+.viewMyWallet--btn {
+  justify-self: center;
+  border: none;
+  background-color: #ff842d;
+  color: rgb(255, 255, 255);
+  font-family: "Nunito Sans", sans-serif;
+  padding: 10px 20px;
+  font-size: large;
+  font-weight: 1000;
+  border-radius: 20px;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.sendbtn,
+.receivebtn {
+  border: none;
+  background-color: #ff842d;
+  color: rgb(255, 255, 255);
+  font-family: "Nunito Sans", sans-serif;
+  border-radius: 4px;
+  font-weight: 600;
+  width: 80px;
+  font-size: 16px;
+}
+
+.mnemonicwrapper {
+  display: grid;
+  width: 100%;
+}
+
+.ScrectPhraseWrapper {
+  background-color: rgb(35, 35, 40);
+  width: 100%;
+  padding: 30px 50px;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+.mnemonic {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  gap: 30px;
+}
+
+.mnemonic--phrase {
+  color: rgb(255, 255, 255);
+  font-family: "Nunito Sans", sans-serif;
+  font-size: larger;
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.05);
+  width: 120px;
+  padding: 6px 0;
+  opacity: 1;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.copymnemonic {
+  cursor: pointer;
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+  gap: 6px;
+}
+
+.copied {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.hide {
   display: none;
 }
 
-.label {
-  opacity: 0.75;
-  font-size: 15px;
+.viewMyWallet--a {
+  text-decoration: none;
+  text-align: center;
+  color: #ff842d;
+  font-weight: 800;
+  font-size: 28px;
+  font-family: "Jersey 10", sans-serif;
+}
+
+.portfoliovalue {
+  margin-top: 35px;
+}
+
+.portfoliovalue--top {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(35, 35, 40);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.portfoliovalue--top-1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.portfoliovalue--top-2 {
+  display: flex;
+  gap: 15px;
+}
+
+.assets--placeholder {
+  display: flex;
+  gap: 300px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.current--holdings {
+  background-color: rgb(35, 35, 40);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.title-bold {
+  font-weight: 800;
+}
+
+.assets--details-platform-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.assets--details-platform-name-details,
+.assets--details-platform-value {
+  font-family: "Nunito Sans", sans-serif;
+  letter-spacing: 1px;
+  font-size: small;
+}
+
+.assets--details-platform {
+  display: flex;
+  gap: 215px;
+  align-items: center;
+}
+
+.assets--details {
+  margin-top: 8px;
 }

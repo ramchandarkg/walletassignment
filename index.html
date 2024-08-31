@@ -12,17 +12,57 @@
     <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
   </head>
   <body>
-    <div class="root">
-      <div class="title">Create Your Crypto Wallet</div>
-      <div class="generate-mnemonic grid">
-        <button class="generate-mnemonic--btn btn">Generate Mnemonic</button>
-        <div class="mnemonic"></div>
-      </div>
-      <div class="add-account hidden">
-        <button class="add-account--btn btn">Add Account</button>
-        <div class="key-pair"></div>
+    <div class="navbar--parent">
+      <div class="navbar container">
+        <div class="navbar--left">
+          <a class="title-anchor" href="index.html"
+            ><span id="title">MyWallet</span></a
+          >
+        </div>
+        <div class="navbar--right">
+          <a href="settings.html"
+            ><img class="settings" src="settings.png"
+          /></a>
+        </div>
       </div>
     </div>
+    <div class="portfoliovalue container">
+      <div class="portfoliovalue--top">
+        <div class="portfoliovalue--top-1">
+          <div class="portfoliovalue--top-1-title text--color title-bold">
+            Total Portfolio Value
+          </div>
+          <div class="portfoliovalue--top-1-value text--color">0.00</div>
+        </div>
+        <div class="portfoliovalue--top-2">
+          <button class="sendbtn">Send</button>
+          <button class="receivebtn">Receive</button>
+        </div>
+      </div>
+      <div class="current--holdings">
+        <div class="assets text--color title-bold" style="margin-bottom: 20px">
+          Assets
+        </div>
+        <div class="assets--placeholder" style="opacity: 0.5">
+          <div class="assets--placeholder-name text--color">Name</div>
+          <div class="assets--placeholder-value text--color">Value</div>
+        </div>
+        <div class="assets--details">
+          <div class="assets--details-platform">
+            <div class="assets--details-platform-name">
+              <img class="cryptologo" src="logo.png" alt="" />
+              <div class="assets--details-platform-name-details">
+                <div class="text--color">SOLANA</div>
+                <div class="text--color" style="opacity: 0.5">SOL</div>
+              </div>
+            </div>
+            <div class="assets--details-platform-value">
+              <div class="text--color">0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
   </body>
-  <script src="index.js"></script>
 </html>

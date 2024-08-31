@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BIP39 Mnemonic Generator</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Development (un-minified) -->
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
+
+    <!-- Production (minified) -->
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+  </head>
+  <body>
+    <div class="navbar--parent">
+      <div class="navbar container">
+        <div class="navbar--left">
+          <a class="title-anchor" href="index.html"
+            ><span id="title">MyWallet</span></a
+          >
+        </div>
+        <div class="navbar--right">
+          <a href="settings.html"
+            ><img class="settings" src="settings.png"
+          /></a>
+        </div>
+      </div>
+    </div>
+    <div class="settingswrapper container">
+      <div class="account-settings">
+        <div class="settings-left">
+          <div class="text--color settingstitle settingspace">Settings</div>
+          <div class="settings-left--details">
+            <div class="settings--option">
+              <img class="account" src="wallet.png" />
+              <span class="text--color text">Mannage Accounts</span>
+            </div>
+          </div>
+        </div>
+        <div class="settings-right">
+          <div class="titlespace text--color settingstitle">
+            Mannage Accounts
+          </div>
+          <div class="accountswrapper">
+            <div class="accountdetails">
+              <div class="text--color">Account Name</div>
+              <div class="wallet">
+                <img class="cryptologo" src="logo.png" alt="" />
+                <div class="keys">
+                  <div class="publickey">
+                    <div class="text--color publickey--value">PublicKey</div>
+                    <img
+                      class="copy"
+                      src="file_copy_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="privatekey">
+                    <img
+                      class="view"
+                      src="visibility_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png"
+                      alt=""
+                    />
+                    <div class="privatekey--value text--color">
+                      View Private Key
+                    </div>
+                  </div>
+
+                  <span class="text--color"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="index.js"></script>
+  <script>
+    render();
+  </script>
+</html>

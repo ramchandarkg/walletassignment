@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Development (un-minified) -->
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
+
+    <!-- Production (minified) -->
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+  </head>
+  <body>
+    <div class="rootwrapper container">
+      <div class="root">
+        <div class="root--title">
+          Welcome To <span id="title">MyWallet</span>
+        </div>
+        <button class="passphrasebtn" onclick="createMnemonic()">
+          Create Wallet
+        </button>
+      </div>
+      <div class="mnemonicwrapper hide">
+        <div class="your-secret-phrase">
+          Your <span id="title">Secret Phrase</span>
+        </div>
+        <div class="ScrectPhraseWrapper">
+          <div class="ScrectPhrase hide"></div>
+          <div class="mnemonic">
+            <div class="mnemonic--phrase-1">1</div>
+            <div class="mnemonic--phrase-2">2</div>
+            <div class="mnemonic--phrase-3">3</div>
+            <div class="mnemonic--phrase-4">4</div>
+            <div class="mnemonic--phrase-5">5</div>
+            <div class="mnemonic--phrase-6">6</div>
+            <div class="mnemonic--phrase-7">7</div>
+            <div class="mnemonic--phrase-8">8</div>
+            <div class="mnemonic--phrase-9">9</div>
+            <div class="mnemonic--phrase-10">10</div>
+            <div class="mnemonic--phrase-11">11</div>
+            <div class="mnemonic--phrase-12">12</div>
+          </div>
+          <div class="copymnemonic copyToClipBoard">
+            <img
+              class="copy"
+              src="file_copy_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png"
+              alt=""
+            />
+            <div class="text--color" onclick="copyToClipBoard()">
+              Copy To Clipboard
+            </div>
+          </div>
+          <div class="copied hide text--color">Copied</div>
+        </div>
+        <a href="index.html" style="text-decoration: none; text-align: center"
+          ><button class="viewMyWallet--btn">Next</button></a
+        >
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
