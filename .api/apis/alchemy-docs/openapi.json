@@ -1,0 +1,208 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Balance",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://{network}.g.alchemy.com/v2/",
+      "variables": {
+        "network": {
+          "enum": [
+            "solana-mainnet",
+            "solana-devnet"
+          ],
+          "default": "solana-mainnet"
+        }
+      }
+    }
+  ],
+  "x-sandbox": {
+    "category": {
+      "type": {
+        "name": "category",
+        "type": "string",
+        "enum": [
+          "core",
+          "bundler",
+          "nft",
+          "token",
+          "transfers",
+          "transaction-receipts",
+          "gas-manager",
+          "trace",
+          "debug",
+          "gas-optimized-transactions",
+          "private-transactions",
+          "notify",
+          "transaction-simulation"
+        ]
+      },
+      "value": "core"
+    }
+  },
+  "paths": {
+    "/{apiKey}": {
+      "post": {
+        "summary": "getBalance",
+        "description": "Returns the balance of the account of provided Pubkey.",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "apiKey",
+            "in": "path",
+            "schema": {
+              "type": "string",
+              "default": "docs-demo",
+              "description": "<style>\n  .custom-style {\n    color: #048FF4;\n  }\n</style>\nFor higher throughput, <span class=\"custom-style\"><a href=\"https://alchemy.com/?a=docs-demo\" target=\"_blank\">create your own API key</a></span>\n"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "default": 1
+                      },
+                      "jsonrpc": {
+                        "type": "string",
+                        "default": "2.0"
+                      }
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "method": {
+                        "default": "getBalance",
+                        "type": "string"
+                      },
+                      "params": {
+                        "type": "array",
+                        "items": {
+                          "oneOf": [
+                            {
+                              "type": "string",
+                              "description": "Base-58 Encoded String - Pubkey of account to query."
+                            },
+                            {
+                              "type": "object",
+                              "properties": {
+                                "commitment": {
+                                  "type": "string",
+                                  "default": "processed",
+                                  "description": "Configures the commitment level of the blocks queried.\nAccepts one of the following strings: [\"finalized\", \"confirmed\", \"processed\"]\n",
+                                  "enum": [
+                                    "finalized",
+                                    "confirmed",
+                                    "processed"
+                                  ]
+                                },
+                                "minContextSlot": {
+                                  "type": "number",
+                                  "default": 165768577,
+                                  "description": "Set the minimum slot that the request can be evaluated at."
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        "prefixItems": {
+                          "oneOf": [
+                            {
+                              "type": "string",
+                              "description": "Base-58 Encoded String - Pubkey of account to query."
+                            },
+                            {
+                              "type": "object",
+                              "properties": {
+                                "commitment": {
+                                  "type": "string",
+                                  "default": "processed",
+                                  "description": "Configures the commitment level of the blocks queried.\nAccepts one of the following strings: [\"finalized\", \"confirmed\", \"processed\"]\n",
+                                  "enum": [
+                                    "finalized",
+                                    "confirmed",
+                                    "processed"
+                                  ]
+                                },
+                                "minContextSlot": {
+                                  "type": "number",
+                                  "default": 165768577,
+                                  "description": "Set the minimum slot that the request can be evaluated at."
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "jsonrpc": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    {
+                      "type": "object",
+                      "nullable": true,
+                      "properties": {
+                        "result": {
+                          "type": "object",
+                          "properties": {
+                            "context": {
+                              "type": "object",
+                              "properties": {
+                                "slot": {
+                                  "type": "integer",
+                                  "format": "int64"
+                                }
+                              }
+                            },
+                            "value": {
+                              "type": "number"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "operationId": "getBalance",
+        "x-readme": {
+          "explorer-enabled": false
+        }
+      }
+    }
+  }
+}
